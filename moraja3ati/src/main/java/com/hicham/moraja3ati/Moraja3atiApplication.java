@@ -9,5 +9,4 @@ public class Moraja3atiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Moraja3atiApplication.class, args);
 	}
-
 }

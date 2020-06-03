@@ -1,5 +1,8 @@
 package com.hicham.moraja3ati.entity;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,16 +23,53 @@ import lombok.ToString;
 @ToString
 public class MaterialDetail {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	
-	@Column(name="name")
-    private String MaterielDetailName;
-	@Column(name="image_url")
-    private String imageUrl;
-    private String title;
-    private String description;  
-
+    @Column(name="name") private String materialDetailName;
+  @Column(name="image_url") private String imageUrl;
+  @Column(name="title") private String title;
+  @Column(name="description")  private String description;
+  @Column(name="created_at") private Timestamp createdOn; 
+  
+  public long getId() {
+      return id;
+  }
+  public void setId(int id) {
+      this.id = id;
+  }
+  public String getMaterialDetailName() {
+      return materialDetailName;
+  }
+  public void setMaterialDetailName(String materialDetailName) {
+      this.materialDetailName = materialDetailName;
+  }
+  public String getImageUrl() {
+      return imageUrl;
+  }
+  public void setImageUrl(String imageUrl) {
+      this.imageUrl = imageUrl;
+  }
+  public String getTitle() {
+      return title;
+  }
+  public void setTitle(String title) {
+      this.title = title;
+  }
+  public String getDescription() {
+      return description;
+  }
+  public void setDescription(String description) {
+      this.description = description;
+  }
+  	public Timestamp  getCreatedOn() {
+      return createdOn;
+  	}
+  	public void setCreatedOn(Timestamp createdOn) {
+      this.createdOn = createdOn;
+  	}
+  
+  
 	@ManyToOne
 	@JoinColumn(name="teacher_id", nullable = false)
 	private MaterialDetail materielDetailTeacherId;
@@ -37,4 +77,6 @@ public class MaterialDetail {
 	@ManyToOne
 	@JoinColumn(name="material_id", nullable = false)
 	private MaterialDetail materielDetailMaterialId;
+	
+	
 }
