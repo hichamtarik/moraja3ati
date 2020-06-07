@@ -15,9 +15,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Entity
-@Table(name="matrial")
+@Table(name="material")
 @Setter
 @Getter
 @ToString
@@ -48,6 +47,12 @@ public class Material {
         this.createdOn = createdOn;
     }
     
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "materielDetailMaterialId")
-	private Set<MaterialDetail> materialId;
+    public Set<MaterialDetail> getMaterialDetail() {
+        return materialDetail;
+    }
+    public void setMaterialDetail(Set<MaterialDetail> materialDetail) {
+        this.materialDetail = materialDetail;
+    }
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "material")
+	private Set<MaterialDetail> materialDetail;
 }

@@ -1,8 +1,6 @@
 package com.hicham.moraja3ati.entity;
 
 import java.sql.Timestamp;
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,10 +25,10 @@ public class MaterialDetail {
     private long id;
 	
     @Column(name="name") private String materialDetailName;
-  @Column(name="image_url") private String imageUrl;
-  @Column(name="title") private String title;
-  @Column(name="description")  private String description;
-  @Column(name="created_at") private Timestamp createdOn; 
+    @Column(name="image_url") private String imageUrl;
+    @Column(name="title") private String title;
+    @Column(name="description")  private String description;
+    @Column(name="created_at") private Timestamp createdOn; 
   
   public long getId() {
       return id;
@@ -68,15 +66,25 @@ public class MaterialDetail {
   	public void setCreatedOn(Timestamp createdOn) {
       this.createdOn = createdOn;
   	}
-  
-  
+	public Teacher getTeacher() {
+      return teacher;
+  	}
+  	public void setTeacher(Teacher teacher) {
+      this.teacher = teacher;
+  	}
+  	public Material  getMaterial() {
+  		return material;
+	}
+	public void setMaterial(Material material) {
+		this.material = material;
+	}
+	
 	@ManyToOne
 	@JoinColumn(name="teacher_id", nullable = false)
-	private MaterialDetail materielDetailTeacherId;
+	private Teacher teacher;
 
 	@ManyToOne
 	@JoinColumn(name="material_id", nullable = false)
-	private MaterialDetail materielDetailMaterialId;
-	
+	private Material material;
 	
 }

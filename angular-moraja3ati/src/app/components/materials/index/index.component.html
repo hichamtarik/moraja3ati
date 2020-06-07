@@ -1,0 +1,70 @@
+<app-header></app-header><!-- this is header==== -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header"></section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="input-group input-group-sm">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h4><u>Liste des Cours</u></h4>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="material-add" class="btn btn-block btn-primary btn-sm" title="Nouveau"> +
+                                                Nouveau</a>
+                                        </div>
+                                    </div>
+                                </div><!-- /.container-fluid -->
+                                <div class="input-group-append">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- this for actions -->
+                        <div class="card-body table-responsive-sm p-0">
+                            <table id="myTable" class="table table-sm table-hover text-nowrap font-weight-normal">
+                                <thead>
+                                    <tr>
+                                        <th class="table-success font-weight-normal">Désignation</th>
+                                        <th class="table-success font-weight-normal">imageUrl</th>
+                                        <th class="table-success font-weight-normal">title</th>
+                                        <th class="table-success font-weight-normal">description</th>
+                                        <th class="table-success font-weight-normal">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <a href="" title="Modifier" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                                    <button title="Supprimer" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                                   
+                                    <tr *ngFor="let materialdetail of materialdetails">
+                                        <td>
+                                            <img [src]="materialdetail.imageUrl" height="50" width="50">
+                                        </td>
+                                        <td>{{ materialdetail.materialDetailName }}</td>
+                                        <td>{{ materialdetail.title }}</td>
+                                        <td>{{ materialdetail.description }}</td>
+                                        <td class="td-actions text-right" >
+                                            <a href="" title="Modifier" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                                             <button title="Supprimer" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<app-footer></app-footer><!-- this is footer==== -->

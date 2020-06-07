@@ -47,6 +47,13 @@ public class Teacher {
     public void setCreatedOn(Timestamp createdOn) {
         this.createdOn = createdOn;
     }
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "materielDetailMaterialId")
-	private Set<MaterialDetail> materialId;
+    public Set<MaterialDetail> getMaterialDetail() {
+        return materialDetail;
+    }
+    public void setMaterialDetail(Set<MaterialDetail> materialDetail) {
+        this.materialDetail = materialDetail;
+    }
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "teacher")
+	private Set<MaterialDetail> materialDetail;
 }
