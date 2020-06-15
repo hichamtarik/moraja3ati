@@ -1,0 +1,46 @@
+<app-header></app-header><!-- this is header==== -->
+<div id="content">
+    <div id="content-header">
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-th"></i></span>
+                        <h5>Liste des Course Detail</h5>
+                        <div class="buttons">
+                            <a  routerLink="/material-details/create" class="btn btn-primary btn-mini" ><i class="icon-plus icon-white"></i> Nouveau</a>
+                        </div>			
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered data-table">
+                            <thead>
+                                <tr>
+                                    <th>Désignation</th>
+                                    <th>Titre</th>
+                                    <th>Matiére</th>
+                                    <th>Description</th>
+                                    <th class="span2">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="gradeC" *ngFor="let materialdetail of materialdetails">
+                                    <td>{{ materialdetail.materialDetailName }}</td>
+                                    <td>{{ materialdetail.title }}</td>
+                                    <td>{{ materialdetail.title }}</td>
+                                    <td>{{ materialdetail.description }}</td>
+                                    <td style="text-align: center;">
+                                        <a [routerLink]="'/material-details/'+materialdetail.id" class="btn btn-success btn-mini"><i class="icon-pencil"></i></a>&nbsp;
+                                        <button class="btn btn-danger btn-mini"><i class="icon-remove"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- container-fluid==== -->
+</div>
+<app-footer></app-footer><!-- this is header==== -->

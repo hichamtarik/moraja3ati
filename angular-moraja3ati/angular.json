@@ -24,9 +24,26 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/bootstrap-responsive.min.css",
+              "src/assets/css/colorpicker.css",
+              "src/assets/css/datepicker.css",
+              "src/assets/css/uniform.css",
+              "src/assets/css/select2.css",
+              "src/assets/css/maruti-style.css",
+              "src/assets/css/maruti-media.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery.ui.custom.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/bootstrap-colorpicker.js",
+              "src/assets/js/bootstrap-datepicker.js",
+              "src/assets/js/jquery.uniform.js",
+              "src/assets/js/select2.min.js",
+              "src/assets/js/maruti.js",
+              "src/assets/js/maruti.form_common.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,14 +105,25 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "assets/fontawesome-free/css/all.min.css",
-              "src/styles.css"
+              "src/assets/css/bootzstrap.min.css",
+              "src/assets/css/bootstrap-responsive.min.css",
+              "src/assets/css/colorpicker.css",
+              "src/assets/css/datepicker.css",
+              "src/assets/css/uniform.css",
+              "src/assets/css/select2.css",
+              "src/assets/css/maruti-style.css",
+              "src/assets/css/maruti-media.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery.ui.custom.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/bootstrap-colorpicker.js",
+              "src/assets/js/bootstrap-datepicker.js",
+              "src/assets/js/jquery.uniform.js",
+              "src/assets/js/select2.min.js",
+              "src/assets/js/maruti.js",
+              "src/assets/js/maruti.form_common.js"
             ]
           }
         },

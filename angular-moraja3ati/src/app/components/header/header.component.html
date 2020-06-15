@@ -1,55 +1,42 @@
-<div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-            </li>
-        </ul>
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#"><i class="far fa-sun"></i></a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="" class="dropdown-item"><i class="fas fa-power-off mr-2"></i> Déconnexion </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="" class="dropdown-item"> <i class="fas fa-edit mr-2"></i> Modifier password</a>
-                    <div class="dropdown-divider"></div>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <!-- /.navbar -->
+<!--Header-part-->
+<div id="header">
+  <h1><a routerLink="/home">Moraja3ati</a></h1>
+</div>
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class=" dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-cog"></i> <span class="text">Déconnexion</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a class="sAdd" title="" routerLink="/logout">Déconnexion</a></li>
+        <li><a class="sInbox" title="" routerLink="/login-edit">Modifier password</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!--close-top-Header-menu-->
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="home" class="brand-link">
-            <span class="brand-text font-weight-light">Moraja3ati</span>
-        </a>
+<div id="sidebar">
+	  <a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+	<ul>
+		<li> <a routerLinkActive routerLink="/home"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+		<li> <a routerLinkActive routerLink="/abouts"><i class="icon icon-file"></i> <span>About</span></a> </li>
+		<li> <a routerLinkActive routerLink="/gallaries"><i class="icon icon-inbox"></i> <span>Gallary</span></a> </li>
+		<li class="submenu"> <a href="#"><i class="icon icon-book"></i> <span>Course</span> <span class="label label-important">2</span></a>
+		  <ul>
+			<li><a routerLinkActive routerLink="/materials">Course</a></li>
+			<li><a routerLinkActive routerLink="/material-details">Detail Course</a></li>
+		  </ul>
+		</li>
+		<li class="submenu"> <a href="#"><i class="icon icon-bookmark"></i> <span>Events</span> <span class="label label-important">2</span></a>
+			<ul>
+			  <li><a routerLinkActive routerLink="/events">Events</a></li>
+			  <li><a routerLinkActive routerLink="/event-details">Detail Events</a></li>
+			</ul>
+		  </li>
+		<li><a routerLinkActive routerLink="/registers"><i class="icon icon-inbox"></i> <span>Registre</span></a></li>
+		<li><a routerLinkActive routerLink="/contacts"><i class="icon icon-bell"></i> <span>Contacts</span></a></li>
+	</ul>
+</div>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar Menu -->
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="home" class="nav-link" routerLinkActive="bg-primary">
-                            <i class="nav-icon fas fa-tachometer-alt"></i><p>Accueil</p>
-                        </a>
-                    </li>
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="materials" class="nav-link" routerLinkActive="bg-primary">
-                            <i class="nav-icon fas fa-tachometer-alt"></i><p>Cours</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
-    </aside>
+
+

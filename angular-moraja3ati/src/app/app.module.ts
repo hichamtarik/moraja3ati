@@ -9,9 +9,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ErrorsComponent } from './components/errors/errors.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialService } from './services/material.service';
-import { IndexComponent } from './components/materials/index/index.component';
-import { EditComponent } from './components/materials/edit/edit.component';
-import { CreateComponent } from './components/materials/create/create.component';
+import { MaterialdetailAddComponent } from './components/materialdetail/materialdetail-add/materialdetail-add.component';
+import { MaterialdetailEditComponent } from './components/materialdetail/materialdetail-edit/materialdetail-edit.component';
+import { MaterialdetailIndexComponent } from './components/materialdetail/materialdetail-index/materialdetail-index.component';
+import { MaterialIndexComponent } from './components/materials/material-index/material-index.component';
+import { MaterialEditComponent } from './components/materials/material-edit/material-edit.component';
+import { MaterialAddComponent } from './components/materials/material-add/material-add.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,14 +24,18 @@ import { CreateComponent } from './components/materials/create/create.component'
     FooterComponent,
     ErrorsComponent,
     HomeComponent,
-    IndexComponent,
-    EditComponent,
-    CreateComponent,
+    MaterialdetailAddComponent,
+    MaterialdetailEditComponent,
+    MaterialdetailIndexComponent,
+    MaterialIndexComponent,
+    MaterialEditComponent,
+    MaterialAddComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     MaterialService
