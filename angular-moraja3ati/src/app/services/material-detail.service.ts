@@ -9,14 +9,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MaterialDetailService {
+  private getURL = this.config.REST_API_SERVER+'/material-details';
 
-  private Url = new ConfigService;
-  private materialDetailURL = 'http://localhost:8080/api/v1/material-details';
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private config: ConfigService) { }
   
-  getMaterialDetails(): Observable<MaterialDetail[]> {
-    return this.httpClient.get<IGetResponseMaterialDetail>(this.materialDetailURL).pipe(
+  getAll(): Observable<MaterialDetail[]> {
+    return this.httpClient.get<IGetResponseMaterialDetail>(this.getURL).pipe(
       map(response => response._embedded.materialDetails)
     );
   }

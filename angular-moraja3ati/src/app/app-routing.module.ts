@@ -11,6 +11,8 @@ import { MaterialAddComponent } from './components/materials/material-add/materi
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+  { path: 'home', component: HomeComponent},
 //**************************  material ***************************/
  { path: 'materials', component: MaterialIndexComponent },
  { path: 'materials/create', component: MaterialAddComponent },
@@ -20,8 +22,6 @@ const routes: Routes = [
  { path: 'material-details/create', component: MaterialdetailAddComponent },
  { path: 'material-details/:id', component: MaterialdetailEditComponent },
  
- { path: '', redirectTo: 'home', pathMatch: 'full' }, 
- { path: 'home', component: HomeComponent},
  { path: '**', component: ErrorsComponent } // Wildcard route for a 404 page
 ];
 

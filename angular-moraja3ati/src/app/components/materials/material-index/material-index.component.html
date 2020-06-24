@@ -29,8 +29,8 @@
                                     <td>{{ material.title }}</td>
                                     <td>{{ material.description }}</td>
                                     <td style="text-align: center;">
-                                        <a [routerLink]="'/materials/'+material.id" class="btn btn-success btn-mini"><i class="icon-pencil"></i></a>&nbsp;
-                                        <button class="btn btn-danger btn-mini"><i class="icon-remove"></i></button>
+                                        <button [routerLink]="['/materials/', material.id]" class="btn btn-success btn-mini"><i class="icon-pencil"></i></button>&nbsp;
+                                        <button (click)="deleteMaterial(material.id)" class="btn btn-danger btn-mini"><i class="icon-remove"></i></button>
                                     </td>
                                 </tr>
                             </tbody>

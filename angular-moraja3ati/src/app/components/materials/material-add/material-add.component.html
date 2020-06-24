@@ -1,1 +1,52 @@
-<p>material-add works!</p>
+<app-header></app-header><!-- this is header==== -->
+<div id="content">
+  <div id="content-header"> </div>
+  <div class="container-fluid">
+  
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+            <h5>Ajouter Detail Course</h5>
+        </div>
+          <div class="widget-content nopadding">
+            <form (ngSubmit)="onSubmit()" class="form-horizontal">
+
+              <div class="control-group">
+                <label class="control-label">Désignation:</label>
+                <div class="controls">
+                  <input [(ngModel)]="model.materialName" type="text" placeholder="Désignation…" id="materialName" name="materialName" class="span7" required>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Title:</label>
+                <div class="controls">
+                  <input [(ngModel)]="model.title" type="text" placeholder="Title…" id="title" name="title" class="span7" required>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Description:</label>
+                <div class="controls">
+                  <input  [(ngModel)]="model.description" type="text" placeholder="Description…" id="description" name="description" class="span7" required >
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Image:</label>
+                <div class="controls">
+                  <input type="file" (change)="selectFile($event)" id="imageUrl" name="imageUrl"/>
+                </div>
+              </div>
+			  
+              <div class="form-actions">
+                <button type="submit" class="btn btn-inverse">Enregistrer</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><hr>
+	
+	
+  </div><!-- container-fluid==== -->
+</div>
+<app-footer></app-footer><!-- this is header==== -->

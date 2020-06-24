@@ -11,6 +11,6 @@ import com.hicham.moraja3ati.entity.MaterialDetail;
 @RepositoryRestResource(collectionResourceRel = "materialDetails", path = "material-details")
 public interface MaterialDetailRepository extends JpaRepository<MaterialDetail, Long>{
 	
-	@RestResource(path = "materialId")
-	Page<MaterialDetail> findByMaterialId(@Param("id") Long id, Pageable pageable);
+	@RestResource(path = "materialDetailId")
+	Page<MaterialDetail> findById(@Param("id") Long id, Pageable pageable);
 }

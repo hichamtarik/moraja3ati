@@ -1,6 +1,5 @@
 package com.hicham.moraja3ati.controller;
 
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,10 +45,11 @@ public class MaterialController {
 	  
 	  //******************* this for insert data **************************************	
 	  @PostMapping(path="/materials") // Map ONLY POST Requests
-	  public @ResponseBody String addNewMaterial (@RequestParam String materialName, @RequestParam String imageUrl, @RequestParam String title, @RequestParam String description, @RequestParam Date createdAt) {
+	  public @ResponseBody String addNewMaterial (@RequestParam String materialName, @RequestParam String imageUrl, @RequestParam String title, @RequestParam String description) {
 	    // @ResponseBody means the returned String is the response, not a view name
 	    // @RequestParam means it is a parameter from the GET or POST request
-	    Material material = new Material();
+		Date createdAt = new Date(); // this for insert date and time 
+		Material material = new Material();
 	    material.setMaterialName(materialName);
 		material.setTitle(title);
 		material.setDescription(description);
@@ -63,11 +63,13 @@ public class MaterialController {
 	  @PutMapping("/materials/{id}")
 	    public ResponseEntity<Material> updatematerial(@PathVariable(value = "id") Long materialId, @RequestParam String materialName, @RequestParam String imageUrl, @RequestParam String title, @RequestParam String description) throws ResourceNotFoundException {
 	        Material material = materialRepository.findById(materialId).orElseThrow(() -> new ResourceNotFoundException("material not found for this id :: " + materialId));
-	
-	        material.setMaterialName(materialName);
+	        
+	        Date updatedAt = new Date(); // this for insert date and time 
+			material.setMaterialName(materialName);
 	    	material.setTitle(title);
 	    	material.setDescription(description);
 	    	material.setImageUrl(imageUrl);
+	    	material.setUpdatedAt(updatedAt);
 	    	
 	        final Material updatedmaterial = materialRepository.save(material);
 	        return ResponseEntity.ok(updatedmaterial);

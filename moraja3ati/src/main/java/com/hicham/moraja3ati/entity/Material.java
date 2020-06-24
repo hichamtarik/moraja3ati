@@ -1,6 +1,5 @@
 package com.hicham.moraja3ati.entity;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -13,9 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -34,13 +30,8 @@ public class Material {
     @Column(name="image_url") private String imageUrl;
     @Column(name="title") private String title;
     @Column(name="description")  private String description;
-    @Column(name="created_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate private Date createdAt;
-    @Column(name="updated_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate private Date updatedAt;
-    
+    @Column(name = "created_at", columnDefinition="DATETIME")@Temporal(TemporalType.TIMESTAMP)private Date createdAt;
+    @Column(name = "updated_at", columnDefinition="DATETIME")@Temporal(TemporalType.TIMESTAMP)private Date updatedAt;
     
     public long getId() {
         return id;
@@ -81,7 +72,7 @@ public class Material {
     public Date getUpdatedAt() {
         return updatedAt;
     }
-    public void setUpdatedAt(Timestamp updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "material")

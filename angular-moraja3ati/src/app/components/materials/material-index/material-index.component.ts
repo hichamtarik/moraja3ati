@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MaterialService } from 'src/app/services/material.service';
 import { Material } from 'src/app/models/material';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-material-index',
@@ -9,22 +10,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./material-index.component.css']
 })
 export class MaterialIndexComponent implements OnInit {
+  
   materials: Material[];
-
   constructor(private _activeRoute: ActivatedRoute, private _MaterialService: MaterialService) { }
 
   ngOnInit(): void {
-    this.getListMaterial();
+    this.getMaterial();
   }
-  getListMaterial() {
-    this._MaterialService.getMaterials().subscribe(
+  getMaterial() {
+    this._MaterialService.getAll().subscribe(
        materials => this.materials = materials
     );
   }
-  getMaterialById(){
-    const id: number = +this._activeRoute.snapshot.paramMap.get('id');
-    this._MaterialService.get(id).subscribe(
-        materials => {console.log(materials);}
-    );
+  
+  deleteMaterial(id: number) {
+    
+  }
+  edit(id: number){
+    
   }
 }

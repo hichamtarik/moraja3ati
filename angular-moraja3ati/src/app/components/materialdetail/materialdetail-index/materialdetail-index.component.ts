@@ -13,11 +13,17 @@ export class MaterialdetailIndexComponent implements OnInit {
   constructor(private _MaterialDetail: MaterialDetailService) { }
 
   ngOnInit(): void {
-    this.listMaterial();
+    this.getMaterial();
   }
-  listMaterial() {
-    this._MaterialDetail.getMaterialDetails().subscribe(
+  getMaterial() {
+    this._MaterialDetail.getAll().subscribe(
       materialdetails => this.materialdetails = materialdetails
     );
+  }
+  updateMaterial(id: number) {
+
+  }
+  deleteMaterial(id: number) {
+
   }
 }
